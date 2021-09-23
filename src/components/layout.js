@@ -15,9 +15,6 @@ import Header from "./header"
 import "./layout.css"
 
 
-//import Alert from 'react-bootstrap/Alert'
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
-
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -31,33 +28,34 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <div>
+        <nav>
+          <ul style={{ display: "flex", flex: 1 }}>
+            <li
+              style={{
+                listStyleType: `none`,
+                padding: `1rem`,
+              }}
+            >
+              <Link to="/about">
+                About
+              </Link>
+            </li>
 
+            <li
+              style={{
+                listStyleType: `none`,
+                padding: `1rem`,
+              }}
+            >
+              <Link to="/gallery">
+                Gallery
+              </Link>
+            </li>
 
-    
-
-
-
-      <Navbar bg="primary" variant="dark">
-  <Container>
-    <Navbar.Brand href="#home">Logo Here</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto">
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/about">About us</Nav.Link>
-        <Nav.Link href="/gallery">Gallery</Nav.Link>
-      </Nav>
-    </Navbar.Collapse>
-  </Container>
-</Navbar>
-
-
-
-
-  
-
-
-
+          </ul>
+        </nav>
+      </div>
 
       <div
         style={{
